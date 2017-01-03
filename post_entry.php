@@ -20,7 +20,11 @@ ini_set('display_errors', true);
 	fwrite($file, $_POST["post"]);
 	fwrite($file, "</div");
 	fwrite($file, "<br>");
+	fwrite($file, "\n\r");
 	fwrite($file, "<div class = 'tags'>");
+
+	//hack--array_intersection is not recognizing the first element of each array even if it matches
+	fwrite($file, "tagged, ");
 	fwrite($file, $_POST["tags"]);
 	fwrite($file, "</div>");
 	fwrite($file, "</div>");

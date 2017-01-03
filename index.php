@@ -7,5 +7,6 @@
 		<p>Tags:</p><input type="text" name="tags"> <br>
 		<p>Post:</p><textarea name="post" rows="10" cols="50"></textarea><br>
 		<input type="submit">
+		<a href = "show_entries.php">Show entries</a>
 	</body>
 </html>
