@@ -23,6 +23,7 @@
 
 <html>
 	<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
 		<title>Journal Interface</title>
 	</head>
 	<body>

@@ -11,11 +11,13 @@
 			if (!(0==filesize($file_name)))
 			{
 				$file = fopen($file_name, "r");
+				echo "<div class='post'>";
+				echo "<div class='post-content'>";
 				echo fread($file, filesize($file_name));
-				fclose($file);
-
-				//include edit and delete buttons
+				echo "</div>";
 				include("delete_and_edit_buttons.php");
+				echo "</div>";
+				fclose($file);
 			}
 
 			$number++;

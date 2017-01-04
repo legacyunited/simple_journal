@@ -1,0 +1,39 @@
+body {
+	background-color: #304800;
+}
+
+div.post {
+	background-color: #90A860;
+	width: 80%;
+	margin: auto;
+	padding: 20px;
+	padding-bottom: 40px;
+	border: 2px solid;
+	border-radius: 20px;
+	margin-bottom: 20px;
+}
+
+div.header {
+	background-color: #90A860;
+	width: 50%;
+	margin: auto;
+	padding: 5px;
+	border: 2px solid;
+	border-radius: 20px;
+}
+
+div.edit_delete {
+	display: inline;
+}
+
+.edit {
+	float: left;
+}
+
+.delete {
+	float: right;
+}
+
+a {
+	color: grey;
+}

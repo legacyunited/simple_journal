@@ -33,7 +33,12 @@
 			//if so, prints out the file
 			if ($matching) {
 				$file = fopen($file_name, "r");
+				echo "<div class='post'>";
+				echo "<div class='post-content'>";
 				echo fread($file, filesize($file_name));
+				echo "</div>";
+				include("delete_and_edit_buttons.php");
+				echo "</div>";
 				fclose($file);
 			}
 
