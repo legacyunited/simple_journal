@@ -33,7 +33,7 @@
 			//if so, prints out the file
 			if ($matching) {
 				$file = fopen($file_name, "r");
-				echo fread($file, filesize($file_name));;
+				echo fread($file, filesize($file_name));
 				fclose($file);
 			}
 

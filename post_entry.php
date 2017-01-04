@@ -2,12 +2,20 @@
 
 error_reporting(E_ALL);
 ini_set('display_errors', true);
-	$number = 1;
-	$file_name = (string) $number . ".txt";
 
-	while (file_exists($file_name) == true) {
-		$number++;
+	//if we're creating a new entry, we loop through all the files until we reach the end and then write to that file
+	if (!isset($_POST["file_name"])) {
+		$number = 1;
 		$file_name = (string) $number . ".txt";
+		while (file_exists($file_name) == true) {
+			$number++;
+			$file_name = (string) $number . ".txt";
+		}
+	}
+
+	//if we're editing an existing file, our file name was passed under $_GET["post_name"]
+	else {
+		$file_name = $_POST["file_name"];
 	}
 
 	$file = fopen($file_name, "w");
@@ -24,7 +32,9 @@ ini_set('display_errors', true);
 	fwrite($file, "<div class = 'tags'>");
 
 	//hack--array_intersection is not recognizing the first element of each array even if it matches
-	fwrite($file, "tagged, ");
+	if (!isset($_POST["file_name"])) {
+		fwrite($file, "tagged, ");
+	}
 	fwrite($file, $_POST["tags"]);
 	fwrite($file, "</div>");
 	fwrite($file, "</div>");
