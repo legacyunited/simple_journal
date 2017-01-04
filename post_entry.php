@@ -6,10 +6,10 @@ ini_set('display_errors', true);
 	//if we're creating a new entry, we loop through all the files until we reach the end and then write to that file
 	if (!isset($_POST["file_name"])) {
 		$number = 1;
-		$file_name = (string) $number . ".txt";
+		$file_name = "entries/" . (string) $number . ".txt";
 		while (file_exists($file_name) == true) {
 			$number++;
-			$file_name = (string) $number . ".txt";
+			$file_name = "entries/" . (string) $number . ".txt";
 		}
 	}
 
@@ -23,9 +23,13 @@ ini_set('display_errors', true);
         echo ( "Error in opening file" );
         exit();
      }
+    date_default_timezone_set('America/New_York');
+	$date = date('m/d/Y', time());
+    fwrite($file, $date);
+    fwrite($file, "<br><br>");
 	fwrite($file, $_POST["post"]);
 	fwrite($file, "\n\r");
-	fwrite($file, "<br><br><br><b>Tags:</b><br><div class = 'tags'>");
+	fwrite($file, "<br><b>Tags:</b><div class = 'tags'>");
 
 	//hack--array_intersection is not recognizing the first element of each array even if it matches
 	if (!isset($_POST["file_name"])) {

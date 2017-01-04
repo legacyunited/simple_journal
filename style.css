@@ -6,7 +6,9 @@ div.post {
 	background-color: #90A860;
 	width: 80%;
 	margin: auto;
-	padding: 20px;
+	padding-left: 20px;
+	padding-left: 20px;
+	padding-top: 5px;
 	padding-bottom: 40px;
 	border: 2px solid;
 	border-radius: 20px;
@@ -26,12 +28,17 @@ div.edit_delete {
 	display: inline;
 }
 
+p {
+	padding: 5px;
+}
+
 .edit {
 	float: left;
 }
 
 .delete {
 	float: right;
+	padding-right: 10px;
 }
 
 a {

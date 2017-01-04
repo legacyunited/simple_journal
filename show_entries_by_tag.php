@@ -8,7 +8,7 @@
 		$requested_tags = explode(", ", $_GET["tags"]);
 
 		$number = 1;
-		$file_name = (string) $number . ".txt";
+		$file_name = "entries/" . "/entries/" . (string) $number . ".txt";
 
 		//iterates through existing files (Make into function later)
 		while (file_exists($file_name)) {
@@ -44,7 +44,7 @@
 
 			
 			$number++;
-			$file_name = (string) $number . ".txt";
+			$file_name = "entries/" . (string) $number . ".txt";
 		}
 
 		?>

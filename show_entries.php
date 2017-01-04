@@ -2,7 +2,7 @@
 <div class="posts">
 	<?php 
 		$number = 1;
-		$file_name = (string) $number . ".txt";
+		$file_name = "entries/" .  (string) $number . ".txt";
 
 		//Runs through all files and reads them out
 		while (file_exists($file_name)) {
@@ -13,7 +13,9 @@
 				$file = fopen($file_name, "r");
 				echo "<div class='post'>";
 				echo "<div class='post-content'>";
+				echo "<p>";
 				echo fread($file, filesize($file_name));
+				echo "</p>";
 				echo "</div>";
 				include("delete_and_edit_buttons.php");
 				echo "</div>";
@@ -21,7 +23,7 @@
 			}
 
 			$number++;
-			$file_name = (string) $number . ".txt";
+			$file_name = "entries/" .  (string) $number . ".txt";
 		}
 
 		?>
