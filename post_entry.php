@@ -23,14 +23,15 @@ ini_set('display_errors', true);
         echo ( "Error in opening file" );
         exit();
      }
-    date_default_timezone_set('America/New_York');
-	$date = date('m/d/Y', time());
+    if (!isset($_POST["file_name"])) {
+    	date_default_timezone_set('America/New_York');
+    	$date = date('m/d/Y', time());
+	}
     fwrite($file, $date);
     fwrite($file, "<br><br>");
 	fwrite($file, $_POST["post"]);
 	fwrite($file, "\n\r");
 	fwrite($file, "<br><b>Tags:</b><div class = 'tags'>");
-
 	//hack--array_intersection is not recognizing the first element of each array even if it matches
 	if (!isset($_POST["file_name"])) {
 		fwrite($file, "tagged, ");

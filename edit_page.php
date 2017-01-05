@@ -7,9 +7,9 @@
 	$line = fgets($file);
 	$post_body = $line;
 
-	while (!strpos($line, "<div class = 'tags'>")) {
-		$line = fgets($file);
+	while (!strpos($line, "class = 'tags'")) {
 		$post_body .= $line;
+		$line = fgets($file);
 	}
 
 	$tags = strip_tags($line);

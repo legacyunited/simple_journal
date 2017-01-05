@@ -13,9 +13,7 @@
 				$file = fopen($file_name, "r");
 				echo "<div class='post'>";
 				echo "<div class='post-content'>";
-				echo "<p>";
 				echo fread($file, filesize($file_name));
-				echo "</p>";
 				echo "</div>";
 				include("delete_and_edit_buttons.php");
 				echo "</div>";
